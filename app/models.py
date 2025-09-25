@@ -36,6 +36,8 @@ class Enrollment(Base):
     course = relationship("Course", back_populates= "enrollments")
 
 
+
+#!!!!!!!!!make sure to put this in another file
 #Base.metadata is object that keeps track of all table definitions u made
 #create all tables in db
 Base.metadata.create_all(engine)

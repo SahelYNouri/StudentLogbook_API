@@ -19,7 +19,7 @@ user= os.getenv("USER")
 password= os.getenv("PASSWORD") 
 port = os.getenv("PORT")
 
-
+Base = declarative_base()
 engine = create_engine(f"postgresql+psycopg2://{user}:{password}@{host}:{port}/{dbname}")
 
 
@@ -27,7 +27,6 @@ engine = create_engine(f"postgresql+psycopg2://{user}:{password}@{host}:{port}/{
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind= engine) #links session to db engine
 
 
-Base = declarative_base()
 
 
 
