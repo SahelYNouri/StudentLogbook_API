@@ -23,6 +23,7 @@ class StudentRead(BaseModel):
     email: str
     year: int
 
+    #lets pydantic read attributes from SQLAlCHEMY model instances
     class Config:
         orm_mode = True  
 
