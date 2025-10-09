@@ -1,9 +1,20 @@
 #main fastapi file
 from fastapi import FastAPI, HTTPException, Depends
+from app.database import SessionLocal
+
+
+#importing the api router objects from the route files
+from routes.students import router as students_router
+from routes.courses import router as courses_router
+from routes.enrollment import router as enrollment_router
+
 from pydantic import BaseModel
 from app import routes, database, models
 from typing import List, Annotated
+from sqlalchemy.orm import Session
 
-#creating a new FastAPI instance
+#creating FastAPI instance
 app = FastAPI()
-app.include_router(routes.routes)
+app.include_router(students_router, prefix= "/students", tags=["Students"])
+
+
