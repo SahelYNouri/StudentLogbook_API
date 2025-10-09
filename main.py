@@ -16,5 +16,5 @@ from sqlalchemy.orm import Session
 #creating FastAPI instance
 app = FastAPI()
 app.include_router(students_router, prefix= "/students", tags=["Students"])
-
-
+app.include_router(courses_router, prefix= "/courses", tags= ["Courses"])
+app.include_router(enrollment_router, prefix= "/enrollments", tags= ["Enrollments"])
