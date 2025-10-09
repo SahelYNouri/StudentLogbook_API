@@ -70,7 +70,7 @@ def update_student(student_id: int, student_update: StudentUpdate, db:Session = 
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail= "Student not found")
     
     #Update only fields that are provided
-    update_data = student_update.dict(exclude_unset=True) # exclude_unset ensures optional fields only
+    update_data = student_update.model_dump(exclude_unset=True) # exclude_unset ensures optional fields only
     for key, value in update_data.items():
         setattr(db_student, key, value) #update the attribute
 
