@@ -68,6 +68,20 @@ def delete_enrollment(enrollment_id: int, db: Session = Depends(get_db)):
 
     return None
 
+#creating additional useful endpoints for fun
+
+#getting all courses for a specific student
+
+@router.get("/student/{student_id}", response_model= List[EnrollmentRead])
+def get_enrollments_by_student(student_id: int, db: Session = Depends(get_db)):
+    return db.query(models.Enrollment).filter(models.Enrollment.student_id == student_id.all())
+
+#all Studenbts in a specific course
+@router.get("/course/{course_id}", response_model= List[EnrollmentRead])
+def get_enrollment_by_course(course_id: int, db: Session= Depends(get_db)):
+    return db.query(models.Enrollment).filter(mdoels.Enrollment/course_id == course_id.all())
+
+
 
 
 
