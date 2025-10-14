@@ -36,5 +36,5 @@ def seed_courses(num_courses = 10):
     finally:
         db.close()
 
-if __name__ = "__main__":
+if __name__ == "__main__":
     seed_courses()
