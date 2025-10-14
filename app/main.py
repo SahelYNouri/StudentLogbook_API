@@ -4,12 +4,11 @@ from app.database import SessionLocal
 
 
 #importing the api router objects from the route files
-from routes.students import router as students_router
-from routes.courses import router as courses_router
-from routes.enrollment import router as enrollment_router
+from app.routes.students import router as students_router
+from app.routes.courses import router as courses_router
+from app.routes.enrollment import router as enrollment_router
 
 from pydantic import BaseModel
-from app import routes, database, models
 from typing import List, Annotated
 from sqlalchemy.orm import Session
 

@@ -10,7 +10,7 @@ from typing import List
 router = APIRouter()
 
 #Create operation
-@router.post("/", resposnse_model= CourseRead, status_code= status.HTTP_201_CREATED)
+@router.post("/", response_model= CourseRead, status_code= status.HTTP_201_CREATED)
 def create_course(course: CourseCreate, db: Session = Depends(get_db)):
     
     db_course = Course(**course.model_dump())

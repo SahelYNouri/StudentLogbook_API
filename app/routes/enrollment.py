@@ -8,7 +8,7 @@ from typing import List
 router= APIRouter()
 
 #Create enrollment
-@router.post("/", respnse_model= EnrollmentRead, status_code= status.HTTP_201_CREATED)
+@router.post("/", response_model= EnrollmentRead, status_code= status.HTTP_201_CREATED)
 def create_enrollment(enrollment: EnrollmentCreate, db: Session= Depends(get_db)):
 
     #check if student and course exists
